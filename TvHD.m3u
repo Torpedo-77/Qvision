@@ -1,2 +1,9 @@
 #EXTM3U
 #EXTINF:-1 ,Canal Provincial
+https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8
+#EXTINF:-2 ,26tv
+http://200.115.193.177/live/26hd-720/playlist.m3u8
+#EXTINF:-3 ,Crónica Tv
+https://cntlnk2-main-edge-access.secure.footprint.net/b16/ngrp:cronicatv_video1-100044_all/Playlist.m3u8?sense=true
+#EXTINF:-4 ,WowTv
+http://cdn.elsalvadordigital.com:1935/wowtv/wowtv/chunklist_w549922410.m3u8
