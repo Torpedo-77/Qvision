@@ -13,3 +13,19 @@ http://www.radiosargentina.com.ar/php/tvm3u.php?id=DIAR0067
 https://list.iptvcat.com/my_list/s/194e2f77c0bc98c2a9303a817e866bd2.m3u8
 #EXTINF:-1 tvg-chno="7",Tv Corrientes 
 https://list.iptvcat.com/my_list/s/592ed54eecccfa4f92b273073ffb87fc.m3u8
+#EXTINF:-1 tvg-chno"8"group-title"Noticias",Canal 6 Moreno
+https://list.iptvcat.com/my_list/s/40a452ff502c083104a06484e690c6e8.m3u8
+#EXTINF:-1 tvg-chno"9"tv-logo="https://dmdqet87i5rod.cloudfront.net/estoesmedia/6006d9d7bc979_tntsports.jpg"group-title"Deportes",TNT SPORTS 
+https://list.iptvcat.com/my_list/s/d251db0675f43246743e7a4eaf71a280.m3u8
+#EXTINF:-1 tvg-chno"10"group-title"Deportes",ESPN2
+https://list.iptvcat.com/my_list/s/02392c613d29152040f078861e1dd63e.m3u8
+#EXTINF:-1 tvg-chno"11"group-title"Peliculas",HBO POP
+https://list.iptvcat.com/my_list/s/86d6334c1b639cf4539c452fa0dd3e75.m3u8
+#EXTINF:1 tvg-chno"12"group-title"Peliculas"HBO PLUS
+https://list.iptvcat.com/my_list/s/c2cc00946343826abd86cda289cbca77.m3u8
+#EXTINF:-1 tvg-chno"13"group-title"Peliculas",HBO FAMILY
+https://list.iptvcat.com/my_list/s/c825a2fba83d42203f2a761c284c063c.m3u8
+#EXTINF:-1 tvg-chno"14"group-title"Peliculas",HBO 2
+https://list.iptvcat.com/my_list/s/0085f07b9c3b967fd0b9f66f7e5da2d1.m3u8
+#EXTINF:-1 tvg-chno"13"group-title"Peliculas,HBO
+https://list.iptvcat.com/my_list/s/b8c945e59de0f47b32060b22dd98b932.m3u8
