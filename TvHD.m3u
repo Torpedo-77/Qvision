@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1 ,Canal Provincial
+#EXTINF:-1 tvg-chno="1"tvg-logo="https://bit.ly/3fkkHXG"group-title="NOTICIAS",Canal Provincial
 https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8
-#EXTINF:-2 ,26tv
+#EXTINF:-1 ,26tv
 http://200.115.193.177/live/26hd-720/playlist.m3u8
-#EXTINF:-3 ,Crónica Tv
+#EXTINF:-1 ,Crónica Tv
 https://cntlnk2-main-edge-access.secure.footprint.net/b16/ngrp:cronicatv_video1-100044_all/Playlist.m3u8?sense=true
-#EXTINF:-4 ,WowTv
+#EXTINF:-1 ,WowTv
 http://cdn.elsalvadordigital.com:1935/wowtv/wowtv/chunklist_w549922410.m3u8
-#EXTINF:-5 ,26 Tv Quilmes Visión 
+#EXTINF:-1 ,26 Tv Quilmes Visión 
 http://www.radiosargentina.com.ar/php/tvm3u.php?id=DIAR0067
-#EXTINF:-6 ,Ciudad Tv Chaco
+#EXTINF:-1 ,Ciudad Tv Chaco
 https://list.iptvcat.com/my_list/s/194e2f77c0bc98c2a9303a817e866bd2.m3u8
-#EXTINF:-7 ,Tv Corrientes 
+#EXTINF:-1 ,Tv Corrientes 
 https://list.iptvcat.com/my_list/s/592ed54eecccfa4f92b273073ffb87fc.m3u8
