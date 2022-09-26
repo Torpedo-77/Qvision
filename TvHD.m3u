@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 tvg-chno="1"tvg-logo="https://bit.ly/3DTcKTx"group-title="Noticias",Canal Provincial
+#EXTINF:-1 tvg-chno="1"tvg-logo="https://bit.ly/3DTcKTx"group-title="Noticias"tvg-id="Canal Provincial",Canal Provincial
 https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8
 #EXTINF:-1 tvg-chno="2",26tv
 http://200.115.193.177/live/26hd-720/playlist.m3u8
@@ -19,7 +19,7 @@ https://list.iptvcat.com/my_list/s/40a452ff502c083104a06484e690c6e8.m3u8
 https://list.iptvcat.com/my_list/s/d251db0675f43246743e7a4eaf71a280.m3u8
 #EXTINF:-1 tvg-chno="10"group-title="Deportes",ESPN2
 https://list.iptvcat.com/my_list/s/02392c613d29152040f078861e1dd63e.m3u8
-#EXTINF:-1 tvg-chno="11"group-title="Peliculas",HBO POP
+#EXTINF:-1 tvg-chno="11"group-title="Peliculas"tvg-id="HBO POP",HBO POP
 https://list.iptvcat.com/my_list/s/86d6334c1b639cf4539c452fa0dd3e75.m3u8
 #EXTINF:-1 tvg-chno="12"group-title="Peliculas",HBO PLUS
 https://list.iptvcat.com/my_list/s/c2cc00946343826abd86cda289cbca77.m3u8
