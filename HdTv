@@ -1,0 +1,29 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="AmericaTV",América TV
+http://45.233.169.1:8000/play/a018
+#EXTINF:-1 tvg-id="Cinemax",Cinemax
+http://45.233.169.1:8000/play/a01l
+#EXTINF:-1 tvg-id="Cinecanal",Cinecanal 
+http://45.233.169.1:8000/play/a01k
+#EXTINF:-1 tvg-id="STARCHANNEL",STAR CHANNEL 
+http://45.233.169.1:8000/play/a05x
+#EXTINF:-1 tvg-id="Space",Space
+http://45.233.169.1:8000/play/a05n
+#EXTINF:-1 tvd-id="I-SAT",I-SAT
+https://list.iptvcat.com/my_list/s/aa6a697964c817ab92c8b51f691f7d60.m3u8
+#EXTINF:-1 tvg-id="ElGourmet",El Gourmet
+http://160.20.164.171:8001/play/a02u
+#EXTINF:-1 tvg-id="HBO",HBO
+https://is-tucuman.cdn.rcs.net.ar/mnp/hbo_hls/playlist.m3u8
+#EXTINF:-1 tvg-id="HBO2",HBO 2
+https://is-tucuman.cdn.rcs.net.ar/mnp/hbo2_hls/playlist.m3u8
+#EXTINF:-1 tvg-id="HBOFamily",HBO Family
+https://is-tucuman.cdn.rcs.net.ar/mnp/hbofam_hls/playlist.m3u8
+#EXTINF:-1 tvg-id="HBOPlus",HBO Plus
+https://is-tucuman.cdn.rcs.net.ar/mnp/hboplus_hls/playlist.m3u8
+#EXTINF:-1 tvg-id="HBOPop",Hbo POp
+https://is-tucuman.cdn.rcs.net.ar/mnp/hbopop_hls/playlist.m3u8
+#EXTINF:--1 tvg-id="HBOExtrene",Hbo Extreme
+https://is-tucuman.cdn.rcs.net.ar/mnp/hboxtr_hls/playlist.m3u8
+#EXTINF:-1 tvg-id="HBOMundi",Hbo Mundi
+https://is-tucuman.cdn.rcs.net.ar/mnp/hbomund_hls/playlist.m3u8
