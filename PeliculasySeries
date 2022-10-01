@@ -1,7 +1,6 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="Los Anillos de Poder"tvg-logo="https://entrepeliculasyseries.nz/Archivos/2022/09/the-lord-of-the-rings-the-rings-of-power-205x315.jpg"group-title="Series",Los Anillos de Poder 1
-https://m160.uqload.org/3rfk2thbvjw2q4drdj2pj47rbddgtbehe2pbaot7trahuxawpvvyrk5nxmfq/v.mp4
+#EXTINF:-1 tvg-name="Los Anillos de Poder"tvg-logo="https://entrepeliculasyseries.nz/Archivos/2022/09/the-lord-of-the-rings-the-rings-of-power-205x315.jpg"group-title="Series",Los Anillos de 
 #EXTINF:-1 tvg-name="SAMARITAN"tvg-logo="https://entrepeliculasyseries.nz/Archivos/2022/08/samaritan.jpg"group-title="Peliculas",SAMARITAN
-https://bit.ly/3rlfuld
+https://delivery-node-ward.voe-network.net/hls/,6oarnddm3y23cszcr3v43m3svr7dbggn3bnkfcgm2qino2vfedn7apv226qa,.urlset/master.m3u8
 #EXTINF:-1 tvg-name="pinocchio"tvg-logo="https://entrepeliculasyseries.nz/Archivos/2022/09/pinocchio.jpg"group-title="Peliculas",pinocchio
 http://51.81.208.167/pelis2022/Pinocchio.2022.lati.mp4
