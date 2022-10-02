@@ -3,7 +3,7 @@
 https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8
 #EXTINF:-1 tvg-id="CANAL26"tvg-logo="https://bit.ly/3Rufqdy",CANAL 26
 http://200.115.193.177/live/26hd-720/playlist.m3u8
-#EXTINF:-1 tvg-id="Crónica"tvg-logo="https://bit.ly/3StAuIW",Crónica Tv
+#EXTINF:-1 tvg-id="Crónica"tvg-logo="https://bit.ly/3StAuIW",Crónica
 https://cntlnk2-main-edge-access.secure.footprint.net/b16/ngrp:cronicatv_video1-100044_all/Playlist.m3u8?sense=true
 #EXTINF:-1 tvg-id="WowTv"tvg-logo="https://wowelsalvador.com/imagen/logo2.png"group-title="Latinos",WowTv
 http://cdn.elsalvadordigital.com:1935/wowtv/wowtv/chunklist_w549922410.m3u8
