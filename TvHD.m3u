@@ -11,7 +11,7 @@ http://cdn.elsalvadordigital.com:1935/wowtv/wowtv/chunklist_w549922410.m3u8
 http://www.radiosargentina.com.ar/php/tvm3u.php?id=DIAR0067
 #EXTINF:-1 tvg-id="CiudadTvChaco",Ciudad Tv Chaco
 https://list.iptvcat.com/my_list/s/194e2f77c0bc98c2a9303a817e866bd2.m3u8
-#EXTINF:-1 tvg-id="TvCorrientes",Tv Corrientes 
+#EXTINF:-1 tvg-id="5TvCorrientesCapital"tvg-logo="https://bit.ly/3y8Cvfa",5Tv Corrientes Capital 
 https://list.iptvcat.com/my_list/s/592ed54eecccfa4f92b273073ffb87fc.m3u8
 #EXTINF:-1 tvg-id="Canal6Moreno",Canal 6 Moreno
 https://list.iptvcat.com/my_list/s/40a452ff502c083104a06484e690c6e8.m3u8
