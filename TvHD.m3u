@@ -33,7 +33,7 @@ https://list.iptvcat.com/my_list/s/0085f07b9c3b967fd0b9f66f7e5da2d1.m3u8
 https://list.iptvcat.com/my_list/s/b8c945e59de0f47b32060b22dd98b932.m3u8
 #EXTINF:-1 tvg-id,ESPN PREMIUM 
 https://ixp-nqn.cdn.rcs.net.ar/anevia/live/localdisk/ESPN_Premium/SA_HLS/ESPN_Premium.m3u8
-#EXTINF:-1 tvg-id="Unicanal",Unicanal
+#EXTINF:-1 tvg-id="Unicanal"tvg-logo="https://bit.ly/3dXefFZ",Unicanal
 http://45.55.127.106/live/unicanal.m3u8
 #EXTINF:-1 tvg-id"Telefe",Telefe
 https://list.iptvcat.com/my_list/s/d5b43f03132b53c47f194423e82db491.m3u8
