@@ -1,0 +1,3 @@
+#EXTM3U
+#EXTINF:-1 tvg-id,"ESPNPREMIUM"tvg-logo="https://bit.ly/3C8SVp8",ESPN PREMIUM 
+http://131.196.194.2:8000/play/a0ex/index.m3u8
