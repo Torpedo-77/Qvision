@@ -23,14 +23,14 @@ https://list.iptvcat.com/my_list/s/02392c613d29152040f078861e1dd63e.m3u8
 https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index_4.m3u8
 #EXTINF:-1 tvg-id="HBOPop",HBO Pop
 https://list.iptvcat.com/my_list/s/86d6334c1b639cf4539c452fa0dd3e75.m3u8
-#EXTINF:-1 tvg-id="HBPplus",HBO plus
+#EXTINF:-1 tvg-id="HBOPplus",HBO plus
 https://list.iptvcat.com/my_list/s/c2cc00946343826abd86cda289cbca77.m3u8
 #EXTINF:-1 tvg-id="HBOfamily",HBO family
 https://list.iptvcat.com/my_list/s/c825a2fba83d42203f2a761c284c063c.m3u8
 #EXTINF:-1 tvg-id="HBO2",HBO 2
 https://list.iptvcat.com/my_list/s/0085f07b9c3b967fd0b9f66f7e5da2d1.m3u8
 #EXTINF:-1 tvg-id="HBO",HBO
-https://list.iptvcat.com/my_list/s/b8c945e59de0f47b32060b22dd98b932.m3u8
+http://200.41.79.165:8000/play/a09a/index.m3u8
 #EXTINF:-1 tvg-id,ESPN PREMIUM 
 http://131.196.194.2:8000/play/a0ex/index.m3u8
 #EXTINF:-1 tvg-id="Unicanal"tvg-logo="https://bit.ly/3dXefFZ",Unicanal
