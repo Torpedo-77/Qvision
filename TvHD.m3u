@@ -21,13 +21,13 @@ https://list.iptvcat.com/my_list/s/d251db0675f43246743e7a4eaf71a280.m3u8
 https://list.iptvcat.com/my_list/s/02392c613d29152040f078861e1dd63e.m3u8
 #EXTINF:-1 tvg-id="TyCSports"tvg-logo="http://images.produ.com/noticias/0818/big-TyCSportsLogo.jpg",TyC Sports
 https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index_4.m3u8
-#EXTINF:-1 tvg-id="HBOPop",HBO Pop
+#EXTINF:-1 tvg-id="HBOPop"tvg-logo="https://bit.ly/3SAZOq3",HBO Pop
 https://list.iptvcat.com/my_list/s/86d6334c1b639cf4539c452fa0dd3e75.m3u8
-#EXTINF:-1 tvg-id="HBOPplus",HBO plus
+#EXTINF:-1 tvg-id="HBOPplus"tvg-logo="https://bit.ly/3fuWcXX",HBO plus
 https://list.iptvcat.com/my_list/s/c2cc00946343826abd86cda289cbca77.m3u8
-#EXTINF:-1 tvg-id="HBOfamily",HBO family
+#EXTINF:-1 tvg-id="HBOfamily"tvg-logo="https://bit.ly/3SxeHr",HBO family
 https://list.iptvcat.com/my_list/s/c825a2fba83d42203f2a761c284c063c.m3u8
-#EXTINF:-1 tvg-id="HBO2",HBO 2
+#EXTINF:-1 tvg-id="HBO2"tvg-logo="https://bit.ly/3rmAIVI",HBO 2
 https://list.iptvcat.com/my_list/s/0085f07b9c3b967fd0b9f66f7e5da2d1.m3u8
 #EXTINF:-1 tvg-id="HBO"tvg-logo="https://bit.ly/3CoGd6W",HBO
 http://200.41.79.165:8000/play/a09a/index.m3u8
