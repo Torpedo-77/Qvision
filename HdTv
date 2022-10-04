@@ -14,7 +14,7 @@ https://list.iptvcat.com/my_list/s/aa6a697964c817ab92c8b51f691f7d60.m3u8
 #EXTINF:-1 tvg-id="ElGourmet",El Gourmet
 http://160.20.164.171:8001/play/a02u
 #EXTINF:-1 tvg-id="HBO",HBO
-https://is-tucuman.cdn.rcs.net.ar/mnp/hbo_hls/playlist.m3u8
+http://131.196.194.2:8000/play/a09m/index.m3u8
 #EXTINF:-1 tvg-id="HBO2",HBO 2
 https://is-tucuman.cdn.rcs.net.ar/mnp/hbo2_hls/playlist.m3u8
 #EXTINF:-1 tvg-id="HBOFamily",HBO Family
