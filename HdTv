@@ -16,7 +16,7 @@ http://160.20.164.171:8001/play/a02u
 #EXTINF:-1 tvg-id="HBO",HBO
 http://131.196.194.2:8000/play/a09m/index.m3u8
 #EXTINF:-1 tvg-id="HBO2",HBO 2
-https://is-tucuman.cdn.rcs.net.ar/mnp/hbo2_hls/playlist.m3u8
+http://magmas5.com:8000/malotv/gratis/4797
 #EXTINF:-1 tvg-id="HBOFamily",HBO Family
 https://is-tucuman.cdn.rcs.net.ar/mnp/hbofam_hls/playlist.m3u8
 #EXTINF:-1 tvg-id="HBOPlus",HBO Plus
