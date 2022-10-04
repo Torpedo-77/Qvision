@@ -24,7 +24,7 @@ https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/in
 #EXTINF:-1 tvg-id="HBOXtreme"tvg-logo="https://bit.ly/3SDlG47",HBO Xtreme
 http://200.41.79.165:8000/play/a05g/index.m3u8
 #EXTINF:-1 tvg-id="HBOPop"tvg-logo="https://bit.ly/3SAZOq3",HBO Pop
-http://186.3.216.78:9955/play/a10p/index.m3u8
+http://8.243.127.178:8000/play/a01h
 #EXTINF:-1 tvg-id="HBOPplus"tvg-logo="https://bit.ly/3fuWcXX",HBO plus
 http://200.41.79.165:8000/play/a05f/index.m3u8
 #EXTINF:-1 tvg-id="HBOfamily"tvg-logo="https://bit.ly/3LWSwul",HBO family 
