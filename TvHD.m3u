@@ -44,7 +44,7 @@ https://list.iptvcat.com/my_list/s/4d236f626205af6bf61c782a4d4087c4.m3u8
 #EXTINF:-1 tvg-id="TVPública"tvg-logo="https://bit.ly/3y9am7N",TV Pública 
 https://list.iptvcat.com/my_list/s/fc51ff1f738cf880fa6c25e923b8b362.m3u8
 #EXTINF:-1 tvg-id="A24"tvg-logo="https://bit.ly/3fD7byP",A24
-https://list.iptvcat.com/my_list/s/958f5e510d8d1074acb1c27165b62d93.m3u8
+http://magmas5.com:8000/malotv/gratis/146369
 #EXTINF:-1 tvg-id="Telemax"tvg-logo="https://bit.ly/3UXKepU",TLX
 https://list.iptvcat.com/my_list/s/ac3db1352fc6e2ef3bd7cd77a615b68e.m3u8
 #EXTINF:-1 tvg-id="TN"tvg-logo="https://bit.ly/3ycc4oN",TN
