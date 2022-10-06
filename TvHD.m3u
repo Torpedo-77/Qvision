@@ -38,7 +38,7 @@ http://131.196.194.2:8000/play/a0ex/index.m3u8
 #EXTINF:-1 tvg-id="Unicanal"tvg-logo="https://bit.ly/3C2hmV9",Unicanal
 http://45.55.127.106/live/unicanal.m3u8
 #EXTINF:-1 tvg-id"Telefe"tvg-logo="https://bit.ly/3V8y3af",Telefe
-https://list.iptvcat.com/my_list/s/d5b43f03132b53c47f194423e82db491.m3u8
+http://magmas5.com:8000/malotv/gratis/3536
 #EXTINF:-1 tvg-id="elnueve"tvg-logo="https://bit.ly/3So1m6J",el nueve
 https://list.iptvcat.com/my_list/s/4d236f626205af6bf61c782a4d4087c4.m3u8
 #EXTINF:-1 tvg-id="TVPública"tvg-logo="https://bit.ly/3y9am7N",TV Pública 
