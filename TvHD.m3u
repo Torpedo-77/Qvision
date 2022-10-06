@@ -52,11 +52,11 @@ http://magmas5.com:8000/malotv/gratis/3556
 #EXTINF:-1 tvg-id="VOLVER"tvg-logo="https://bit.ly/3Crlb7B",VOLVER 
 https://list.iptvcat.com/my_list/s/01b3e19567a3fa64236d80298f357c66.m3u8
 #EXTINF:-1 tvg-id="DirectvSports",Directv Sports
-https://list.iptvcat.com/my_list/s/1120e0fb03d795202b7c7f879baa6e3c.m3u8
+http://magmas5.com:8000/malotv/gratis/135642
 #EXTINF:-1 tvg-id="DirectvSports1",Directv Sports 1
 https://list.iptvcat.com/my_list/s/fce26f0a744fbd8e7f2715b7c05eab69.m3u8
 #EXTINF:-1 tvg-id"DirectvSports2",Directv Sports 2
-https://list.iptvcat.com/my_list/s/4fdbcac7e4a5bdbada662df827e89d4f.m3u8
+http://magmas5.com:8000/malotv/gratis/135643
 #EXTINF:-1 tvg-id"DirectvSports",Directv Sports
 https://list.iptvcat.com/my_list/s/1328205b94f8f92b4622e1d746f10600.m3u8
 #EXTINF:-1 tvg-id="StarChannel",Star Channel
