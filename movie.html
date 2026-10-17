@@ -48,47 +48,40 @@ body{background:#0A0A0A;color:#fff;font-family:Arial;max-width:430px;margin:0 au
 </head>
 <body>
 <div class="logo">Movie<span>+</span></div>
-
 <div class="menu-top">
 <div id="btn-pelis" class="on" onclick="cambiar('pelis')">🎬 Películas</div>
 <div id="btn-series" class="off" onclick="cambiar('series')">🍿 Series</div>
 <div id="btn-tv" class="off" onclick="cambiar('tv')">📡 TV</div>
 </div>
-
 <div class="carrusel" id="carrusel">
-<a class="active" href="javascript:abrirRepro('LINK_OAK','EL FINAL DE LA CALLE OAK')"><img src="https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"></a>
-<a href="javascript:abrirRepro('LINK_NADIE2','NADIE 2')"><img src="https://image.tmdb.org/t/p/w780/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg"></a>
+<a class="active" href="javascript:abrirRepro('https://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/555989.mp4','EL FINAL DE LA CALLE OAK')"><img src="https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"></a>
+<a href="javascript:abrirRepro('https://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/557829.mkv','NADIE 2')"><img src="https://image.tmdb.org/t/p/w780/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg"></a>
 <a href="javascript:abrirRepro('LINK_TRON','TRON ARES')"><img src="https://image.tmdb.org/t/p/w780/1pdfLvkbY9ohJlCjQH2CZjjYvJ.jpg"></a>
 <a href="javascript:abrirRepro('LINK_JW','JOHN WICK 1')"><img src="https://image.tmdb.org/t/p/w780/fZPSd91yGE9fCcCe6OoQr6E3Be.jpg"></a>
 <div class="info"><div class="tag" id="tag">ESTRENO 2026 • TERROR</div><h2 id="t">EL FINAL DE LA CALLE OAK</h2></div>
 </div>
 <div class="dots" id="dots"></div>
-
 <div id="sec-pelis"><div class="grid" id="gridPelis"></div></div>
 <div id="sec-series" style="display:none"><div class="grid" id="gridSeries"></div></div>
 <div id="sec-tv" style="display:none"><div id="listaTv"></div></div>
-
 <div id="serieDetail"><div style="height:260px;position:relative"><img id="serieImg" src="" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(to top,#0A0A0A,transparent)"></div></div><div style="padding:15px"><h2 id="serieTitle"></h2><div id="tempMenu" style="display:flex;gap:8px;margin:15px 0"></div><div id="capList"></div></div></div>
-
 <div id="playerWrap">
 <div class="playerHeader"><div style="font-weight:900">Movie<span style="color:#E50914">+</span></div><div id="exoTitle" style="font-size:12px;color:#aaa;max-width:200px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis"></div></div>
 <div id="artplayer"></div>
 </div>
-
 <script>
 const datos=[{t:"EL FINAL DE LA CALLE OAK",tag:"ESTRENO 2026 • TERROR"},{t:"NADIE 2",tag:"ESTRENO 2025 • ACCION"},{t:"TRON: ARES",tag:"ESTRENO 2026 • SCI-FI"},{t:"JOHN WICK 1",tag:"ACCION 2014"}];
 let idx=0;const links=document.querySelectorAll('.carrusel a');const dots=document.getElementById('dots');datos.forEach((_,i)=>{let d=document.createElement('div');d.className='dot'+(i==0?' active':'');dots.appendChild(d);});setInterval(()=>{links[idx].classList.remove('active');dots.children[idx].classList.remove('active');idx=(idx+1)%4;links[idx].classList.add('active');dots.children[idx].classList.add('active');document.getElementById('t').innerText=datos[idx].t;document.getElementById('tag').innerText=datos[idx].tag;},3500);
 const PELICULAS=[
-{titulo:"EL FINAL DE LA CALLE OAK",year:"2026",rate:"7.1",link:"http://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/555989.mp4",poster:"https://image.tmdb.org/t/p/w500/g9DUGw8ufetrwhCIrwq3h1NlpWO.jpg"},
-{titulo:"NADIE 1",year:"2021",rate:"7.4",link:"http://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/557829.mkv
-",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
-{titulo:"NADIE 2",year:"2025",rate:"7.0",link:"LINK_NADIE2.mp4",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
+{titulo:"EL FINAL DE LA CALLE OAK",year:"2026",rate:"7.1",link:"https://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/555989.mp4",poster:"https://image.tmdb.org/t/p/w500/g9DUGw8ufetrwhCIrwq3h1NlpWO.jpg"},
+{titulo:"NADIE 1",year:"2021",rate:"7.4",link:"https://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/557829.mkv",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
+{titulo:"NADIE 2",year:"2025",rate:"7.0",link:"https://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/557829.mkv",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
 {titulo:"JOHN WICK 1",year:"2014",rate:"7.4",link:"LINK_JW1.mp4",poster:"https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Be.jpg"},
 ];
-const SERIES={derry:{titulo:"IT: Bienvenidos a Derry",year:"2025",rate:"8.5",img:"https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",poster:"https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",temporadas:{1:[{num:1,tit:"Capitulo 1",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"https://uqload.is/embed-2hqdlatwcbk2.html",dur:"58m"},{num:2,tit:"Capitulo 2",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"https://hugh.cdn.rumble.cloud/video/fwe2/09/s8/2/k/L/_/t/kL_tz.aaa.mp4",dur:"52m"},{num:3,tit:"Capitulo 3",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E03.mp4",dur:"50m"},{num:4,tit:"Capitulo 4",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E04.mp4",dur:"54m"},{num:5,tit:"Capitulo 5",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E05.mp4",dur:"49m"},{num:6,tit:"Capitulo 6",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E06.mp4",dur:"55m"},{num:7,tit:"Capitulo 7",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E07.mp4",dur:"60m"},{num:8,tit:"Capitulo 8 - Final",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E08.mp4",dur:"65m"}]}}};
+const SERIES={derry:{titulo:"IT: Bienvenidos a Derry",year:"2025",rate:"8.5",img:"https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",poster:"https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",temporadas:{1:[{num:1,tit:"Capitulo 1",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E01.mp4",dur:"58m"},{num:2,tit:"Capitulo 2",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E02.mp4",dur:"52m"},{num:3,tit:"Capitulo 3",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E03.mp4",dur:"50m"},{num:4,tit:"Capitulo 4",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E04.mp4",dur:"54m"},{num:5,tit:"Capitulo 5",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E05.mp4",dur:"49m"},{num:6,tit:"Capitulo 6",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E06.mp4",dur:"55m"},{num:7,tit:"Capitulo 7",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E07.mp4",dur:"60m"},{num:8,tit:"Capitulo 8 - Final",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E08.mp4",dur:"65m"}]}}};
 const TV=[
-{nombre:"TN",logo:"https://upload.wikimedia.org/wikipedia/commons/6/6c/TN_logo.png",link:"http://starlatino.tv:8880/Gx38754415/v35qbT98vNDk/359922"},
-{nombre:"C5N",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/C5N_logo.svg/512px-C5N_logo.svg.png",link:"http://138.59.227.20:8000/play/a09e/index.m3u8"},
+{nombre:"TN",logo:"https://upload.wikimedia.org/wikipedia/commons/6/6c/TN_logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{nombre:"C5N",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/C5N_logo.svg/512px-C5N_logo.svg.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
 {nombre:"A24",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/A24_Logo.png/500px-A24_Logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
 {nombre:"ESPN",logo:"https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
 {nombre:"TyC Sports",logo:"https://upload.wikimedia.org/wikipedia/commons/c/c8/TyC_Sports_logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
@@ -98,7 +91,7 @@ let gridP=document.getElementById('gridPelis');PELICULAS.forEach(p=>{gridP.inner
 let gridS=document.getElementById('gridSeries');Object.keys(SERIES).forEach(k=>{let s=SERIES[k];gridS.innerHTML+=`<div class="card" onclick="abrirSerie('${k}')"><div class="imgBox"><img src="${s.poster}"><div class="hd">HD</div><div class="year">${s.year}</div><div class="rate">★${s.rate}</div></div></div>`});
 let listaTv=document.getElementById('listaTv');TV.forEach(t=>{listaTv.innerHTML+=`<div class="tv-row" onclick="abrirRepro('${t.link}','${t.nombre} en Vivo')"><img src="${t.logo}" style="width:48px;height:48px;border-radius:12px;background:#fff;object-fit:contain;padding:5px"><div><div style="font-weight:800">${t.nombre}</div><div style="font-size:11px;color:#999">VIVO</div></div><div class="vivo">● VIVO</div></div>`;});
 function cambiar(t){document.getElementById('sec-pelis').style.display=t=='pelis'?'block':'none';document.getElementById('sec-series').style.display=t=='series'?'block':'none';document.getElementById('sec-tv').style.display=t=='tv'?'block':'none';document.getElementById('btn-pelis').className=t=='pelis'?'on':'off';document.getElementById('btn-series').className=t=='series'?'on':'off';document.getElementById('btn-tv').className=t=='tv'?'on':'off';}
-let art=null;function abrirRepro(url,titulo){history.pushState({player:1},'');document.getElementById('exoTitle').innerText=titulo;document.getElementById('playerWrap').classList.add('show');if(art){art.destroy();art=null;}art=new Artplayer({container:'#artplayer',url:url,type:url.includes('.m3u8')?'m3u8':'mp4',autoplay:true,fullscreen:true,fullscreenWeb:true,playsInline:true,autoOrientation:true,setting:true,pip:true,playbackRate:true,aspectRatio:true,hotkey:true,theme:'#E50914',plugins:[artplayerPluginChromecast({})],customType:{m3u8:function(v,u){if(Hls.isSupported()){let h=new Hls();h.loadSource(u);h.attachMedia(v);}else if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=u;}}},moreVideoAttr:{crossOrigin:'anonymous','x-webkit-airplay':'allow','x5-video-player-type':'h5',referrerPolicy:'no-referrer'}});}
+let art=null;function abrirRepro(url,titulo){history.pushState({player:1},'');document.getElementById('exoTitle').innerText=titulo;document.getElementById('playerWrap').classList.add('show');if(art){art.destroy();art=null;}art=new Artplayer({container:'#artplayer',url:url,type:url.includes('.m3u8')?'m3u8':'mp4',autoplay:true,fullscreen:true,fullscreenWeb:true,playsInline:true,autoOrientation:true,setting:true,pip:true,playbackRate:true,aspectRatio:true,hotkey:true,theme:'#E50914',plugins:[artplayerPluginChromecast({})],customType:{m3u8:function(v,u){if(Hls.isSupported()){let h=new Hls();h.loadSource(u);h.attachMedia(v);}else if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=u;}},mp4:function(v,u){v.src=u;}},moreVideoAttr:{crossOrigin:'anonymous',referrerPolicy:'no-referrer'}});}
 function cerrarRepro(){document.getElementById('playerWrap').classList.remove('show');if(art){art.destroy();art=null;}}
 let serieActual=null;function abrirSerie(id){history.pushState({serie:1},'');serieActual=SERIES[id];document.getElementById('serieImg').src=serieActual.img;document.getElementById('serieTitle').innerText=serieActual.titulo;let menu=document.getElementById('tempMenu');menu.innerHTML='';Object.keys(serieActual.temporadas).forEach(t=>{let b=document.createElement('div');b.className='tempBtn'+(t==1?' on':'');b.innerText='Temporada '+t;b.onclick=()=>mostrarTemp(t);menu.appendChild(b);});mostrarTemp(Object.keys(serieActual.temporadas)[0]);document.getElementById('serieDetail').style.display='block';}
 function mostrarTemp(t){document.querySelectorAll('.tempBtn').forEach(b=>{b.classList.remove('on');if(b.innerText.includes(t))b.classList.add('on');});let lista=document.getElementById('capList');lista.innerHTML='';serieActual.temporadas[t].forEach(cap=>{let row=document.createElement('div');row.className='capRow';row.innerHTML=`<img src="${cap.img}" style="width:110px;height:62px;border-radius:8px"><div style="flex:1"><b>${cap.num}. ${cap.tit}</b><br><span style="font-size:11px;color:#999">${cap.dur}</span></div><div style="color:#E50914">▶</div>`;row.onclick=()=>abrirRepro(cap.url,serieActual.titulo+' T'+t+' E'+cap.num);lista.appendChild(row);});}
