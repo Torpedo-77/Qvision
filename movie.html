@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Movie+ Cast</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/artplayer-plugin-chromecast/dist/artplayer-plugin-chromecast.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0A;color:#fff;font-family:Arial;max-width:430px;margin:0 auto}
+.logo{font-size:34px;font-weight:900;padding:18px 20px 10px}.logo span{color:#E50914}
+.menu-top{display:flex;gap:10px;padding:12px 14px 14px}
+.menu-top div{flex:1;padding:12px 6px;border-radius:14px;font-size:13px;font-weight:800;cursor:pointer;text-align:center;border:1px solid #222;display:flex;align-items:center;justify-content:center;gap:6px}
+.menu-top div.on{background:#E50914;border-color:#E50914;color:#fff}
+.menu-top div.off{background:#18181B;color:#999}
+.carrusel{margin:0 14px 12px;height:190px;border-radius:18px;overflow:hidden;position:relative;background:#111}
+.carrusel a{position:absolute;width:100%;height:100%;opacity:0;transition:0.6s}
+.carrusel a.active{opacity:1}
+.carrusel img{width:100%;height:100%;object-fit:cover}
+.carrusel::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 60%);pointer-events:none}
+.info{position:absolute;bottom:12px;left:14px;z-index:3;pointer-events:none}
+.tag{font-size:9px;background:rgba(255,255,255,.2);padding:4px 7px;border-radius:4px}
+.info h2{font-size:18px;margin-top:6px;font-weight:900}
+.dots{display:flex;justify-content:center;gap:6px;margin:8px 0 16px}
+.dot{width:8px;height:8px;background:#333;border-radius:50%}
+.dot.active{width:26px;background:#E50914;border-radius:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px 20px}
+.card{background:transparent;border-radius:16px;cursor:pointer}
+.imgBox{position:relative;height:220px;border-radius:16px;overflow:hidden;background:#222}
+.imgBox img{width:100%;height:100%;object-fit:cover}
+.hd{position:absolute;top:8px;left:8px;background:#E50914;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px}
+.year{position:absolute;top:32px;left:8px;background:rgba(0,0,0,.7);font-size:10px;padding:2px 6px;border-radius:4px}
+.rate{position:absolute;top:8px;right:8px;width:30px;height:30px;background:rgba(0,0,0,.75);border:1.5px solid #FFC107;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#FFC107}
+.tv-row{background:#18181B;border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;margin:0 12px 10px;cursor:pointer}
+.vivo{margin-left:auto;color:#E50914;font-size:11px;font-weight:800}
+#playerWrap{position:fixed;inset:0;background:#000;z-index:9999;display:none}
+#playerWrap.show{display:flex;flex-direction:column}
+#artplayer{width:100%;height:100%;flex:1}
+#serieDetail{position:fixed;inset:0;background:#0A0A0A;z-index:2000;display:none;overflow-y:auto;max-width:430px;margin:0 auto}
+.tempBtn{padding:8px 16px;border-radius:20px;background:#18181B;border:1px solid #333;font-size:12px;font-weight:800;cursor:pointer}
+.tempBtn.on{background:#E50914;border-color:#E50914}
+.capRow{display:flex;gap:12px;background:#18181B;border-radius:12px;padding:8px;margin-bottom:10px;align-items:center;cursor:pointer}
+.playerHeader{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#000;border-bottom:1px solid #111}
+</style>
+</head>
+<body>
+<div class="logo">Movie<span>+</span></div>
+
+<div class="menu-top">
+<div id="btn-pelis" class="on" onclick="cambiar('pelis')">🎬 Películas</div>
+<div id="btn-series" class="off" onclick="cambiar('series')">🍿 Series</div>
+<div id="btn-tv" class="off" onclick="cambiar('tv')">📡 TV</div>
+</div>
+
+<div class="carrusel" id="carrusel">
+<a class="active" href="javascript:abrirRepro('LINK_OAK','EL FINAL DE LA CALLE OAK')"><img src="https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"></a>
+<a href="javascript:abrirRepro('LINK_NADIE2','NADIE 2')"><img src="https://image.tmdb.org/t/p/w780/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg"></a>
+<a href="javascript:abrirRepro('LINK_TRON','TRON ARES')"><img src="https://image.tmdb.org/t/p/w780/1pdfLvkbY9ohJlCjQH2CZjjYvJ.jpg"></a>
+<a href="javascript:abrirRepro('LINK_JW','JOHN WICK 1')"><img src="https://image.tmdb.org/t/p/w780/fZPSd91yGE9fCcCe6OoQr6E3Be.jpg"></a>
+<div class="info"><div class="tag" id="tag">ESTRENO 2026 • TERROR</div><h2 id="t">EL FINAL DE LA CALLE OAK</h2></div>
+</div>
+<div class="dots" id="dots"></div>
+
+<div id="sec-pelis"><div class="grid" id="gridPelis"></div></div>
+<div id="sec-series" style="display:none"><div class="grid" id="gridSeries"></div></div>
+<div id="sec-tv" style="display:none"><div id="listaTv"></div></div>
+
+<div id="serieDetail"><div style="height:260px;position:relative"><img id="serieImg" src="" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(to top,#0A0A0A,transparent)"></div></div><div style="padding:15px"><h2 id="serieTitle"></h2><div id="tempMenu" style="display:flex;gap:8px;margin:15px 0"></div><div id="capList"></div></div></div>
+
+<div id="playerWrap">
+<div class="playerHeader"><div style="font-weight:900">Movie<span style="color:#E50914">+</span></div><div id="exoTitle" style="font-size:12px;color:#aaa;max-width:200px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis"></div></div>
+<div id="artplayer"></div>
+</div>
+
+<script>
+const datos=[{t:"EL FINAL DE LA CALLE OAK",tag:"ESTRENO 2026 • TERROR"},{t:"NADIE 2",tag:"ESTRENO 2025 • ACCION"},{t:"TRON: ARES",tag:"ESTRENO 2026 • SCI-FI"},{t:"JOHN WICK 1",tag:"ACCION 2014"}];
+let idx=0;const links=document.querySelectorAll('.carrusel a');const dots=document.getElementById('dots');datos.forEach((_,i)=>{let d=document.createElement('div');d.className='dot'+(i==0?' active':'');dots.appendChild(d);});setInterval(()=>{links[idx].classList.remove('active');dots.children[idx].classList.remove('active');idx=(idx+1)%4;links[idx].classList.add('active');dots.children[idx].classList.add('active');document.getElementById('t').innerText=datos[idx].t;document.getElementById('tag').innerText=datos[idx].tag;},3500);
+const PELICULAS=[
+{titulo:"EL FINAL DE LA CALLE OAK",year:"2026",rate:"7.1",link:"http://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/555989.mp4",poster:"https://image.tmdb.org/t/p/w500/g9DUGw8ufetrwhCIrwq3h1NlpWO.jpg"},
+{titulo:"NADIE 1",year:"2021",rate:"7.4",link:"http://starlatino.tv:8880/movie/Gx38754415/v35qbT98vNDk/557829.mkv
+",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
+{titulo:"NADIE 2",year:"2025",rate:"7.0",link:"LINK_NADIE2.mp4",poster:"https://image.tmdb.org/t/p/w500/oBgWY00bEFeZ9N25wThW3SMKQlW.jpg"},
+{titulo:"JOHN WICK 1",year:"2014",rate:"7.4",link:"LINK_JW1.mp4",poster:"https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Be.jpg"},
+];
+const SERIES={derry:{titulo:"IT: Bienvenidos a Derry",year:"2025",rate:"8.5",img:"https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",poster:"https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",temporadas:{1:[{num:1,tit:"Capitulo 1",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"https://uqload.is/embed-2hqdlatwcbk2.html",dur:"58m"},{num:2,tit:"Capitulo 2",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"https://hugh.cdn.rumble.cloud/video/fwe2/09/s8/2/k/L/_/t/kL_tz.aaa.mp4",dur:"52m"},{num:3,tit:"Capitulo 3",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E03.mp4",dur:"50m"},{num:4,tit:"Capitulo 4",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E04.mp4",dur:"54m"},{num:5,tit:"Capitulo 5",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E05.mp4",dur:"49m"},{num:6,tit:"Capitulo 6",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E06.mp4",dur:"55m"},{num:7,tit:"Capitulo 7",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E07.mp4",dur:"60m"},{num:8,tit:"Capitulo 8 - Final",img:"https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",url:"LINK_DERRY_E08.mp4",dur:"65m"}]}}};
+const TV=[
+{nombre:"TN",logo:"https://upload.wikimedia.org/wikipedia/commons/6/6c/TN_logo.png",link:"http://starlatino.tv:8880/Gx38754415/v35qbT98vNDk/359922"},
+{nombre:"C5N",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/C5N_logo.svg/512px-C5N_logo.svg.png",link:"http://138.59.227.20:8000/play/a09e/index.m3u8"},
+{nombre:"A24",logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/A24_Logo.png/500px-A24_Logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{nombre:"ESPN",logo:"https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{nombre:"TyC Sports",logo:"https://upload.wikimedia.org/wikipedia/commons/c/c8/TyC_Sports_logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{nombre:"Telefe",logo:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Telefe_logo.png",link:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"}
+];
+let gridP=document.getElementById('gridPelis');PELICULAS.forEach(p=>{gridP.innerHTML+=`<div class="card" onclick="abrirRepro('${p.link}','${p.titulo}')"><div class="imgBox"><img src="${p.poster}"><div class="hd">HD</div><div class="year">${p.year}</div><div class="rate">★${p.rate}</div></div></div>`});
+let gridS=document.getElementById('gridSeries');Object.keys(SERIES).forEach(k=>{let s=SERIES[k];gridS.innerHTML+=`<div class="card" onclick="abrirSerie('${k}')"><div class="imgBox"><img src="${s.poster}"><div class="hd">HD</div><div class="year">${s.year}</div><div class="rate">★${s.rate}</div></div></div>`});
+let listaTv=document.getElementById('listaTv');TV.forEach(t=>{listaTv.innerHTML+=`<div class="tv-row" onclick="abrirRepro('${t.link}','${t.nombre} en Vivo')"><img src="${t.logo}" style="width:48px;height:48px;border-radius:12px;background:#fff;object-fit:contain;padding:5px"><div><div style="font-weight:800">${t.nombre}</div><div style="font-size:11px;color:#999">VIVO</div></div><div class="vivo">● VIVO</div></div>`;});
+function cambiar(t){document.getElementById('sec-pelis').style.display=t=='pelis'?'block':'none';document.getElementById('sec-series').style.display=t=='series'?'block':'none';document.getElementById('sec-tv').style.display=t=='tv'?'block':'none';document.getElementById('btn-pelis').className=t=='pelis'?'on':'off';document.getElementById('btn-series').className=t=='series'?'on':'off';document.getElementById('btn-tv').className=t=='tv'?'on':'off';}
+let art=null;function abrirRepro(url,titulo){history.pushState({player:1},'');document.getElementById('exoTitle').innerText=titulo;document.getElementById('playerWrap').classList.add('show');if(art){art.destroy();art=null;}art=new Artplayer({container:'#artplayer',url:url,type:url.includes('.m3u8')?'m3u8':'mp4',autoplay:true,fullscreen:true,fullscreenWeb:true,playsInline:true,autoOrientation:true,setting:true,pip:true,playbackRate:true,aspectRatio:true,hotkey:true,theme:'#E50914',plugins:[artplayerPluginChromecast({})],customType:{m3u8:function(v,u){if(Hls.isSupported()){let h=new Hls();h.loadSource(u);h.attachMedia(v);}else if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=u;}}},moreVideoAttr:{crossOrigin:'anonymous','x-webkit-airplay':'allow','x5-video-player-type':'h5',referrerPolicy:'no-referrer'}});}
+function cerrarRepro(){document.getElementById('playerWrap').classList.remove('show');if(art){art.destroy();art=null;}}
+let serieActual=null;function abrirSerie(id){history.pushState({serie:1},'');serieActual=SERIES[id];document.getElementById('serieImg').src=serieActual.img;document.getElementById('serieTitle').innerText=serieActual.titulo;let menu=document.getElementById('tempMenu');menu.innerHTML='';Object.keys(serieActual.temporadas).forEach(t=>{let b=document.createElement('div');b.className='tempBtn'+(t==1?' on':'');b.innerText='Temporada '+t;b.onclick=()=>mostrarTemp(t);menu.appendChild(b);});mostrarTemp(Object.keys(serieActual.temporadas)[0]);document.getElementById('serieDetail').style.display='block';}
+function mostrarTemp(t){document.querySelectorAll('.tempBtn').forEach(b=>{b.classList.remove('on');if(b.innerText.includes(t))b.classList.add('on');});let lista=document.getElementById('capList');lista.innerHTML='';serieActual.temporadas[t].forEach(cap=>{let row=document.createElement('div');row.className='capRow';row.innerHTML=`<img src="${cap.img}" style="width:110px;height:62px;border-radius:8px"><div style="flex:1"><b>${cap.num}. ${cap.tit}</b><br><span style="font-size:11px;color:#999">${cap.dur}</span></div><div style="color:#E50914">▶</div>`;row.onclick=()=>abrirRepro(cap.url,serieActual.titulo+' T'+t+' E'+cap.num);lista.appendChild(row);});}
+function cerrarSerie(){document.getElementById('serieDetail').style.display='none';}
+window.onpopstate=function(){if(document.getElementById('playerWrap').classList.contains('show')){cerrarRepro();return;}if(document.getElementById('serieDetail').style.display=='block'){cerrarSerie();return;}};
+</script>
+</body>
+</html>
