@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>CineHD+</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0f0f0f;color:#fff;font-family:Arial}
+.header{background:#000;padding:15px;text-align:center;color:#E50914;font-size:22px;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.card{background:#1c1c1c;border-radius:10px;overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card h3{font-size:14px;padding:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#playerWrap{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999}
+#artplayer{width:100%;height:100%}
+#close{position:absolute;top:10px;right:15px;z-index:10000;background:#E50914;color:#fff;border:none;padding:8px 12px;border-radius:5px}
+</style>
+</head>
+<body>
+
+<div class="header">CINEHD+ v2</div>
+<div class="grid" id="grid"></div>
+
+<div id="playerWrap">
+<button id="close" onclick="cerrar()">X CERRAR</button>
+<div id="artplayer"></div>
+</div>
+
+<script>
+// ==== ACA PONES TUS PELIS ====
+const pelis = [
+  {titulo:"VENOM 3", img:"https://image.tmdb.org/t/p/w500/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg", url:"https://starlatino.tv:8880/series/PEDRO/557829/557829.mkv"},
+  {titulo:"DEADPOOL 3", img:"https://image.tmdb.org/t/p/w500/3w99U6Qz8O7o2G8z8o2g.jpg", url:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+];
+
+const grid = document.getElementById('grid');
+pelis.forEach(p=>{
+  grid.innerHTML += `<div class="card" onclick="abrirRepro('${p.url}','${p.titulo}')">
+    <img src="${p.img}"><h3>${p.titulo}</h3></div>`;
+});
+
+function abrirRepro(url, titulo){
+  let esApp = navigator.userAgent.toLowerCase().includes('appcreator') || typeof Android !== 'undefined' || window.AppCreator24;
+  
+  if(esApp){
+    // DENTRO DE APPCREATOR24 -> ABRE EXOPLAYER NATIVO DE LA FOTO
+    window.location.href = url;
+  } else {
+    // EN CHROME -> USA ARTPLAYER
+    document.getElementById('playerWrap').style.display='block';
+    new Artplayer({
+      container:'#artplayer', url:url, autoplay:true, fullscreen:true, theme:'#E50914',
+      type: url.includes('.m3u8')?'m3u8':'mp4',
+      customType:{m3u8:function(v,u){if(Hls.isSupported()){let h=new Hls();h.loadSource(u);h.attachMedia(v);}else v.src=u;}},
+      moreVideoAttr:{crossOrigin:'anonymous', referrerPolicy:'no-referrer'}
+    });
+  }
+}
+function cerrar(){document.getElementById('playerWrap').style.display='none'; document.getElementById('artplayer').innerHTML='';}
+</script>
+</body>
+</html>
